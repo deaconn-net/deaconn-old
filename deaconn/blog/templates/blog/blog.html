@@ -1,0 +1,23 @@
+{% load static %}
+
+<html>
+    <head>
+        {% include 'home/load_static.html' %}
+    </head>
+    <body>
+        {% include 'home/bg.html' %}
+        <div class="container-fluid">
+            {% include 'home/navbar.html' %}
+
+            <div id="content">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <p class="fst-italic text-center">Coming Soon...</p>
+                    </div>
+                </div>
+            </div>
+
+            {% include 'home/footer.html' %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,107 @@
+{% load static %}
+
+<html>
+    <head>
+        {% include 'home/load_static.html' %}
+    </head>
+    <body>
+        {% include 'home/bg.html' %}
+
+        <div class="container-fluid">
+            
+            {% include 'home/navbar.html' %}
+            {{ request.path }}
+            <section id="content">
+                <div class="row justify-content-around">
+                    <div class="col-3">
+                        <div class="section">
+                            <img src="{% static 'home/whatis.jpg' %}">
+                            <h1 class="text-center">What Is Deaconn?</h1>
+                            <p>Dea<span class="flair">conn</span> is a company dedicated to Christian Deacon's products and career.</p>
+                            <p>Christian Deacon is a self-taught engineer interested in programming, networking, and general engineering. He enjoys learning, progressing, and working on many areas within the technology industry. This ranges from (D)DoS protection, to pen-testing, to web development/general tools, and eventually AI/robotic engineering.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="section">
+                            <img src="{% static 'home/os-stats.jpg' %}">
+                            <h1 class="text-center">Open Source Stats</h1>
+                            <p>
+                                <ul>
+                                    <li><i class="bi bi-envelope-paper-fill"></i> Public Repositories - <span class="flair">10</span></li>
+                                    <li><i class="bi bi-star-fill"></i> Stars - <span class="flair">389</span></li>
+                                    <li><i class="bi bi-bell-fill"></i> Commits - <span class="flair">5000</span></li>
+                                    <li><i class="bi bi-bug-fill"></i> Issues - <span class="flair">5000</span></li>
+                                </ul>
+                            </p>
+                            <p>All <span class="flair">Open Source</span> projects are available on Christian's GitHub located <a href="https://github.com/gamemann" target="_blank">here</a>.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-around">
+                    <div class="col-3">
+                        <div class="section">
+                            <img src="{% static 'home/myexp.png' %}">
+                            <h1 class="text-center">My Experiences</h1>
+                            <p>Christian has experience in many programming languages and also has experience in both networking and Linux.</p>
+                            <p>Programming languages Christian has experience in may be found below.
+                                <ul>
+                                    <li>C</li>
+                                    <li>Python</li>
+                                    <li>Golang</li>
+                                    <li>C++</li>
+                                    <li>PHP</li>
+                                    <li>Java</li>
+                                    <li>HTML/CSS</li>
+                                    <li>JavaScript</li>
+                                    <li>Sourcepawn</li>
+                                    <li>Lua</li>
+                                    <li>Elixir</li>
+                                </ul>
+                            </p>
+
+                            <p>In addition to programming, Christian also has experience in <span class="flair">Linux</span>/<span class="flair">networking</span>. This comes with the following experiences.
+                                <ul>
+                                    <li>Linux networking/tunneling protocols including <span class="flair">IPIP</span>, GFE, and more.</li>
+                                    <li>Linux kernel networking paths including <span class="flair">XDP</span> (Express Data Path) and TC (Traffic Control).</li>
+                                    <li>Kernel-bypass libraries such as the <span class="flair">DPDK</span>.</li>
+                                    <li>Linux firewalls including <span class="flair">NFTables</span>, IPTables, and more.</li>
+                                    <li>Third-party firewalls (either based on Linux or Unix) such as <span class="flair">pfSense</span>, IPFire, VyOS, and more.</li>
+                                    <li><span class="flair">BGP</span> (Border Gateway Protocol) tuning and routing.</li>
+                                    <li>Deploying and managing <span class="flair">Anycast</span> systems.</li>
+                                </ul>
+                            </p>
+
+                            <p>Christian also has experience managing a large/successful gaming community for over ten years along with support-related jobs. This has given him the following additional experiences.
+                                <ul>
+                                    <li>Managing over <span class="flair">fifty</span> dedicated servers/VPSs running a combination of Linux/Windows for game and web servers (along with custom kernels/configurations).</li>
+                                    <li>Providing the <span class="flair">best</span> customer experience he is capable of.</li>
+                                    <li>Communicating and <span class="flair">helping</span> other community/server owners.</li>
+                                    <li>Writing public/internal guides and knowledgebase articles (Christian <span class="flair">loves</span> writing).</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="section">
+                            <img src="{% static 'home/mypro.jpg' %}">
+                            <h1 class="text-center">My Projects</h1>
+                            <p>Excluding official Dea<span class="flair">conn</span> <a href="/products">products</a>, the following are Christian's top projects.
+                                <ul>
+                                    <li><a href="https://GFLClan.com/" target="_new">GFL (Games For Life)</a> - A large/successful gaming community Christian founded and owned from January 25th, 2011 to July 13th, 2021 (over <span class="flair">ten</span> years!).</li>
+                                    <li><a href="https://browser.tf" target="_new">Browser.TF</a> - A <span class="flair">web-sided</span> server browser for the game Team Fortress 2.</li>
+                                    <li><a href="https://github.com/gamemann/XDP-Firewall" target="_new">XDP Firewall</a> - A stateless firewall that attaches to the Linux <span class="flair">XDP</span> path.</li>
+                                    <li><a href="https://github.com/gamemann/XDP-Forwarding" target="_new">XDP Forwarding</a> - A layer 3/4 forwarding program that attaches to the Linux XDP path for fast packet processing and utilizes <span class="flair">source-port mapping</span>.</li>
+                                    <li><a href="https://github.com/Packet-Batch" target="_new">Packet Batch</a> - A packet generator that supports three versions including the DPDK, AF_XDP, and standard Linux AF_PACKETv3 sockets. Useful for <span class="flair">network monitoring</span> or  <span class="flair">pen-testing</span> (DoS/DDoS).</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {% include 'home/footer.html' %}
+        </div>
+    </body>
+</html>
