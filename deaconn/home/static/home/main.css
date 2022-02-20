@@ -87,8 +87,6 @@ a:hover
 
 .section > img
 {
-    height: 504px;
-    width: 832px;
     border-radius: 15px 15px 0px 0px;
     opacity: 0.80;
 }
