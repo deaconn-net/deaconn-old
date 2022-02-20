@@ -3,22 +3,54 @@
 <html>
     <head>
         <title>LBG - Deaconn</title>
-        
+
         {% include 'home/load_static.html' %}
         {% include 'home/global_head.html' %}
+        <link href="{% static 'lbg/lbg.css' %}" rel="stylesheet">
     </head>
     <body>
         {% include 'home/bg.html' %}
         <div class="container-fluid">
             {% include 'home/navbar.html' %}
 
-            <div id="content">
-                <div class="row align-items-center">
+            <section id="content">
+                <div class="row row-cols-1 row-cols-md-3 g-4" data-masonry='{"percentPosition": true }'>
                     <div class="col">
-                        <p class="fst-italic text-center">Coming Soon...</p>
+                        <div class="card">
+                            <img class="img-card-top" src="{% static 'lbg/whatis.png' %}">
+                            <div class="card-body">
+                                <h1 class="card-title text-center">What Is LBG?</h1>
+                                <p class="card-text"><span class="flair">LBG</span> (Laid Back Gaming) is an online gaming community who hosts unique game servers across multiple games such as Garry's Mod, Rust, Counter-Strike: Global Offensive, Team Fortress 2, and more.</p>
+
+                                <p>LBG is a separate entity from Dea<span class="flair">conn</span>, but Deaconn provides LBG with game server/web machines and technical assistance because Christian is an owner within LBG. LBG is more of a hobby to Christian and does it for fun/love for gaming.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <img class="img-card-top" src="{% static 'lbg/gs.jpg' %}">
+                            <div class="card-body">
+                                <h1 class="card-title text-center">Game Servers</h1>
+                                <p class="card-text">As of right now, LBG is still in development and does <span class="fst-italic">not</span> have any game servers running at this moment. Once LBG has servers running, this area will be populated with banners from said servers.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <img class="img-card-top" src="{% static 'lbg/ds.jpg' %}">
+
+                            <div class="card-body">
+                                <h1 class="card-title text-center">Discord Server</h1>
+                                <p class="card-text">While LBG does have a website <a href="https://lbgaming.co" target="_new">here</a>, the community base is most active on Discord. Please see below for Discord details.</p>
+
+                                <p class="card-text text-center"><iframe src="https://discord.com/widget?id=922352768902135818&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             {% include 'home/footer.html' %}
         </div>

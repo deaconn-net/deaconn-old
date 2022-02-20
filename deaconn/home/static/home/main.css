@@ -78,26 +78,26 @@ a:hover
     margin-right: 50px;
 }
 
-.section
+.card
 {
     padding-bottom: 15px;
     margin-bottom: 30px;
     background: rgba(0, 0, 0, 0.247)
 }
 
-.section > img
+.card > img
 {
     border-radius: 15px 15px 0px 0px;
     opacity: 0.80;
 }
 
-.section > h1
+.card > .card-body > h1
 {
     color: #FFF;
     text-decoration: underline;
 }
 
-.section > p
+.card > .card-body > p
 {
     padding-left: 10px;
 }
