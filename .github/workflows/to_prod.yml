@@ -20,5 +20,5 @@ jobs:
         run: ssh-keyscan -p 1023 -H 51.81.86.146 >> ~/.ssh/known_hosts
         
       - name: Rebuild
-        run: ssh prod@51.81.86.146 -p 1023 systemctl restart deaconn
+        run: ssh prod@51.81.86.146 -p 1023 sudo systemctl restart deaconn
     
