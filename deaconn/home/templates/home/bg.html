@@ -2,7 +2,7 @@
 
 <div id="background">
     <div id="overlay"></div>
-    <video playsinline autoplay muted onplaying="this.controls=false" loop poster="{% static 'home/bg.png' %}" class="bgvid">
+    <video playsinline autoplay muted onplaying="this.controls=false" loop crossorigin="anonymous" poster="{% static 'home/bg.png' %}" class="bgvid">
         <source src="{% static 'home/bg_small.mp4' %}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
     </video>
 </div>
