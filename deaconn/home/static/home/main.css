@@ -35,6 +35,12 @@ a:hover
     z-index: -2;
 }
 
+.bgvid
+{
+    min-width: 100%; 
+    min-height: 100%;
+}
+
 #title
 {
     color: #FFF;
