@@ -126,6 +126,11 @@ footer .row > div
     border-right: 1px solid rgba(0, 0, 17, 0.7);
 }
 
+#social div
+{
+    border: none;
+}
+
 #social
 {
     margin-top: 15px;
