@@ -1,7 +1,11 @@
-var $container = $('#container');
-
-// initialize Masonry after all images have loaded  
-$container.imagesLoaded( function() 
+$(document).ready(function()
 {
-    $container.masonry();
+    setTimeout(function()
+    {
+        $('.row').masonry
+        ({
+            percentPosition: true
+        });
+    }, 500);
+
 });
