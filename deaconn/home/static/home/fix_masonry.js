@@ -1,11 +1,8 @@
-$(document).ready(function()
+/* Wait until images are loaded and then setup Masonry. */
+$(window).on("load", function()
 {
-    setTimeout(function()
-    {
-        $('.row').masonry
-        ({
-            percentPosition: true
-        });
-    }, 500);
-
+    $('#content .row').masonry
+    ({
+        percentPosition: true,
+    });
 });

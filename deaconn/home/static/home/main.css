@@ -8,13 +8,16 @@ body
 
 a
 {
-    color: rgb(0, 158, 221) !important;
+    color: rgb(40 194 255) !important;
+    transition: 200ms;
     text-decoration: none !important;
+    border-bottom: 2px solid transparent;
 }
 
 a:hover
 {
     color: rgb(0, 168, 235) !important;
+    border-color: rgb(0, 168, 235);
 }
 
 #overlay 
@@ -67,6 +70,11 @@ a:hover
     color: #FFF !important;
 }
 
+.nav-item:is(.active) > a, .nav-item:not(.active) > a:hover
+{
+    border-color: transparent;
+}
+
 .navbar-nav 
 {
     float:none;
@@ -117,7 +125,6 @@ a:hover
 footer
 {
     margin-top: 15px;
-    border-top: 1px solid rgba(0, 0, 17, 0.1);
     padding: 15px;
 }
 
@@ -133,7 +140,7 @@ footer .row > div
 
 #social
 {
-    margin-top: 15px;
+    margin-bottom: 48px;
 }
 
 #social a
