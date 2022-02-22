@@ -26,7 +26,7 @@ a:hover
     height: 100%;
     position: fixed;
     z-index: 0;
-    background: rgba(0, 0, 0, 0.75)
+    background: rgba(0, 0, 0, 0.5)
 }
 
 #background 
@@ -159,4 +159,26 @@ footer .row > div
 footer .row > div:last-child
 {
     border: none;
+}
+
+#settings
+{
+
+    min-width: 130px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.247);
+    border-radius: 0px 15px 0px 0px;
+}
+
+#settingsContent li
+{
+    color: inherit;
+    background-color: rgba(0, 19, 24, 0.7);
+}
+
+#settingsContent li:hover
+{
+    background-color: rgba(0, 19, 24, 0.9);
+
+    cursor: pointer;
 }
