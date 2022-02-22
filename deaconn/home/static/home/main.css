@@ -163,10 +163,11 @@ footer .row > div:last-child
 
 #settings
 {
-
     min-width: 130px;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.247);
+
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.80);
     border-radius: 0px 15px 0px 0px;
 }
 
