@@ -1,0 +1,22 @@
+{% load static %}
+
+<html>
+    <head>
+        {% include 'home/load_static.html' %}
+        {% include 'home/global_head.html' %}
+    </head>
+    <body>
+        {% include 'home/bg.html' %}
+        {% include 'home/settings.html' %}
+
+        <div class="container">
+            {% include 'home/navbar.html' %}
+
+            <section id="content">
+                {% include template_name %}
+            </section>
+
+            {% include 'home/footer.html' %}
+        </div>
+    </body>
+</html>
