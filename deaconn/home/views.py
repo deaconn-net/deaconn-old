@@ -6,4 +6,6 @@ def home_view(request):
     info["gh_repos"] = 99
     info["gh_followers"] = 2302
     info["gh_commits"] = 5034
-    return render(request, 'home/home.html', info)
+    info["template_name"] = 'home/home.html'
+    info["title"] = 'Home - Deaconn'
+    return render(request, 'home/page.html', info)

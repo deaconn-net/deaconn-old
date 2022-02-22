@@ -130,7 +130,7 @@ footer
 
 footer .row > div
 {
-    border-right: 1px solid rgba(0, 0, 17, 0.7);
+    border-right: 4px solid rgba(0, 0, 17, 0.2);
 }
 
 #social div
@@ -153,4 +153,10 @@ footer .row > div
 #social a:hover
 {
     color: #FFF !important;
+    border-color: transparent;
+}
+
+footer .row > div:last-child
+{
+    border: none;
 }

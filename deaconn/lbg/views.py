@@ -2,4 +2,6 @@ from django.shortcuts import render
 
 def lbg_view(request):
     info = {}
-    return render(request, 'lbg/lbg.html', info)
+    info["template_name"] = 'lbg/lbg.html'
+    info["title"] = 'LBG - Deaconn'
+    return render(request, 'home/page.html', info)
