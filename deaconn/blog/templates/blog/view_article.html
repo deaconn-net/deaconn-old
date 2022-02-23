@@ -1,0 +1,26 @@
+{% load static %}
+{% load markdown %}
+
+{% if article != False %}
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
+            <div class="card">
+                <img class="card-img-top" src="{{ article.image.url }}" alt="header image">
+                <div class="card-body">
+                    <h1 class="card-title text-center">{{ article.title }}</h1>
+                    <div class="markdown">
+                        {{ article.contents | do_markdown }}
+                    </div>
+                    <br /><br />
+                    <div class="text-center" id="share">
+                        <h3>Share!</h3>
+                        <p><a onclick='copyTextToClipboard("{{ request.build_absolute_uri }}");'><i class="bi bi-share-fill"></i></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% else %}
+        <p><h3 class="text-center">Article not found.</h3></p>
+{% endif %}
+    

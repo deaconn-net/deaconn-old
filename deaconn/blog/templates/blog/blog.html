@@ -1,7 +1,61 @@
 {% load static %}
+{% load tags %}
 
-<div class="row align-items-center">
-    <div class="col">
-        <p class="fst-italic text-center">Coming Soon...</p>
+{% if articles.count > 0 %}
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+            <div class="card" id="search-area">
+                <div class="card-body">
+                    <div class="text-center">
+                        <form action="{% url 'blog:index' %}" method="GET">
+                            <div class="form-group">
+                                <label for="search">Search</label>
+                                <br />
+                                <input type="text" id="search" name="s" />
+                                <br />
+                                <br />
+                                <button class="btn btn-primary" type="submit">Search!</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% for article in articles %}
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="{{ article.image.url }}" alt="header image">
+                    <div class="card-body">
+                        <h1 class="card-title text-center">{{ article.title }}</h1>
+                        <div class="text-center">
+                            <p class="card-text"><small>By <span class="flair">{{ article.author.first_name }} {{ article.author.last_name }}</span></small></p>
+                            <p class="card-text"><small>Created On <span class="flair">{{ article.date_added }}</span></small></p>
+                        </div>
+                        <br />
+                        <p class="card-text">{{ article.description }}</p>
+                        <br />
+                        <p class="card-text"><div class="text-center">{{ article.tags | do_tags }}</div></p>
+                        <br />
+                        <p class="card-text"><h3 class="text-center"><a href="{% url 'blog:article' article.id %}">Read full article!</a></h3></p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     </div>
-</div>
+
+    {% if pages %}
+        <div class="row">
+            <div class="col">
+                <div class="text-center">
+                    {% for page in pages %}
+                        <span class="page{% if page|stringformat:'s' == page_num|stringformat:'s' %} active{% endif %}"><a href="/blog?p={{ page }}">{{ page }}</a></span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% else %}
+        <p><h3 class="text-center">No Articles Found!</h3></p>
+{% endif %}
+    
