@@ -26,12 +26,15 @@ SECRET_KEY = 'django-insecure-95-2-^@c))4#_to3*!qz550gr!lf7w=i7k*dgwyhb-pz)m!6ho
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['51.81.86.146', '127.0.0.1', 'localhost', 'deaconn.net']
+if os.environ.get('DEBUG'):
+    DEBUG = True
 
+ALLOWED_HOSTS = ['51.81.86.146', '127.0.0.1', 'localhost', 'deaconn.net', 'pb-dev01.deacon.internal']
 
 # Application definition
 
 INSTALLED_APPS = [
+    'user.apps.UserConfig',
     'home.apps.HomeConfig',
     'products.apps.ProductsConfig',
     'blog.apps.BlogConfig',
@@ -78,16 +81,24 @@ WSGI_APPLICATION = 'deaconn.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_NAME'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': 'db',
-        'PORT': 5432,
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ.get('POSTGRES_NAME'),
+            'USER': os.environ.get('POSTGRES_USER'),
+            'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+            'HOST': 'db',
+            'PORT': 5432,
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
