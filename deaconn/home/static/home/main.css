@@ -205,6 +205,8 @@ footer .row > div:last-child
     text-align: center;
     margin-right: 10px;
     color: #FFF;
+    display: inline-block;
+    margin-top: 5px;
 }
 
 .tag > a

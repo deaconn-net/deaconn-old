@@ -35,7 +35,7 @@
                         <br />
                         <p class="card-text">{{ article.description }}</p>
                         <br />
-                        <p class="card-text"><div class="text-center">{{ article.tags | do_tags }}</div></p>
+                        <div class="text-center"><p class="card-text">{{ article.tags | do_tags }}</p></div>
                         <br />
                         <p class="card-text"><h3 class="text-center"><a href="{% url 'blog:article' article.id %}">Read full article!</a></h3></p>
                     </div>
