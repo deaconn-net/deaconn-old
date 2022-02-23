@@ -11,6 +11,8 @@
                     <div class="markdown">
                         {{ article.contents | do_markdown }}
                     </div>
+                    <p class="card-text"><small>By <span class="flair">{{ article.author.first_name }} {{ article.author.last_name }}</span></small></p>
+                    <p class="card-text"><small>Created On <span class="flair">{{ article.date_added }}</span></small></p>
                     <br /><br />
                     <div class="text-center" id="share">
                         <h3>Share!</h3>
