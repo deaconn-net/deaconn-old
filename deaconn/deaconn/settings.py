@@ -142,7 +142,7 @@ STATIC_ROOT = "/deaconn/static/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_ROOT = '/deaconn/media'
+MEDIA_ROOT = '/deaconn/media/'
 MEDIA_URL = '/media/'
 
 # Blog settings.
