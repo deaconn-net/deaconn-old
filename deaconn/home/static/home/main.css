@@ -105,10 +105,15 @@ a:hover
     opacity: 0.80;
 }
 
+.card img
+{
+    max-width: 100%;
+}
+
 .card > .card-body > h1
 {
     color: #FFF;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .card > .card-body > p
@@ -182,4 +187,79 @@ footer .row > div:last-child
     background-color: rgba(0, 19, 24, 0.9);
 
     cursor: pointer;
+}
+
+.markdown h1
+{
+    color: inherit;
+}
+
+.tag
+{
+    background: rgba(40, 194, 255, 0.70);
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    margin-right: 10px;
+    color: #FFF;
+}
+
+.tag > a
+{
+    color: inherit !important;
+}
+
+.tag > a:hover
+{
+    border-color: transparent;
+}
+
+.page
+{
+    padding: 10px;
+}
+
+.page > a
+{
+    font-size: larger;
+    text-decoration: none !important;
+}
+
+.page:is(.active) > a
+{
+    color: #FFF !important;
+}
+
+.page:not(.active) > a
+{
+    color: rgb(151, 151, 151) !important;
+}
+
+.page:not(.active) > a:hover
+{
+    color: #FFF !important;
+}
+
+.page:is(.active) > a, .page:not(.active) > a:hover
+{
+    border-color: transparent;
+}
+
+#search-area input
+{
+    border-radius: 5px;
+}
+
+#share a
+{
+    font-size: 48px;
+    cursor: pointer;
+}
+
+#share a:hover
+{
+    border-color: transparent;
 }
