@@ -1,3 +1,13 @@
+$(window).on("load", function()
+{
+    $grid = $('#content .row')
+
+    $grid.masonry
+    ({
+        percentPosition: true,
+    });;
+});
+
 // Cookies
 function createCookie(name, value, days) 
 {
@@ -172,6 +182,8 @@ $(document).ready(function()
                 $('#add-comment-contents-markdown').html(data);
             });
         }
-
+        
+        $grid.masonry('reloadItems');
+        $grid.masonry('layout');
     }, 2000);
 });
