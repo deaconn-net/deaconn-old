@@ -16,7 +16,7 @@
                                 </div>
                                 <br />
                                 <div class="text-center">
-                                    <button class="btn btn-primary" type="submit">Search!</button>
+                                    <button class="btn btn-primary post-btn" type="submit">Search!</button>
                                 </div>
                             </form>
                         </div>
@@ -51,7 +51,7 @@
                         <h1 class="card-title text-center">{{ article.title }}</h1>
 
                         <p class="card-text">
-                            <small>By <span class="flair">{% if article.author.first_name %}{{ article.author.first_name }} {{ article.author.last_name }}{% else %}Unknown{% endif %}</span></small>
+                            <small>By <span class="flair">{% if article.author.first_name %}{{ article.author.first_name }} {{ article.author.last_name }}{% else %}{{ article.author.username }}{% endif %}</span></small>
                             <br />
                             <small>Created On <span class="flair">{{ article.date_added }}</span></small>
                         </p>

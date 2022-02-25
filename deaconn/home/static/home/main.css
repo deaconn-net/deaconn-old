@@ -30,8 +30,11 @@ a:hover
     border-color: rgb(0, 168, 235);
 }
 
-#overlay 
+#background:before 
 {
+    content: '';
+    left: 0;
+    top: 0;
     margin: auto;
     width: 100%;
     height: 100%;
@@ -40,7 +43,7 @@ a:hover
     position: fixed;
     z-index: auto;
     background: #000000;
-    opacity: 0.80;
+    opacity: 0.70;
 }
 
 #background 
@@ -58,6 +61,7 @@ a:hover
 {
     min-width: 100%; 
     min-height: 100%;
+    display: block;
 }
 
 #title
@@ -185,7 +189,7 @@ footer .row > div:last-child
     min-width: 150px;
     padding: 10px;
     z-index: 50;
-    background: rgba(0, 216, 245, 0.115);
+    background: rgba(0, 21, 24, 0.959);
     border-radius: 0px 15px 0px 0px;
 }
 
@@ -193,7 +197,7 @@ footer .row > div:last-child
 {
     color: inherit;
     background-color: transparent;
-    border: 1px solid #36363660;
+    border: 1px solid #00000060;
     text-align: center;
 }
 
@@ -284,7 +288,7 @@ footer .row > div:last-child
 {
     font-size: 48px;
     cursor: pointer;
-    margin-right: 15px;
+    margin-right: 32px;
     display: inline-block;
 }
 
@@ -334,11 +338,17 @@ code
 {
     list-style-type: none;
     text-align: center;
+    padding: 0px;
 }
 
-#add-comment col:first-child
+#add-comment .col:first-child
 {
     border-right: 4px solid rgba(0, 0, 17, 0.2);
+}
+
+#add-comment
+{
+    margin-top: 32px;
 }
 
 #add-comment-area
@@ -352,25 +362,18 @@ code
 
 .post-btn
 {
-    font-size: 32px;
+    font-size: 22px;
     border: none;
-    background: transparent;
-    padding-right: 10px;
+    background: rgba(0, 93, 105, 0.486);
+    margin-right: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    color: #FFF;
 }
 
-.edit
+.post-btn:hover
 {
-    color: rgb(0, 223, 223);
-}
-
-.delete
-{
-    color: rgb(0, 74, 143);
-}
-
-.edit:hover, .delete:hover
-{
-    color: rgb(54, 98, 139);
+    background: rgba(54, 98, 139, 0.80);
 }
 
 .comment
@@ -391,13 +394,13 @@ code
 
 .comment-author img
 {
-    margin-right: 10px;
     max-width: 100%;
     max-height: 100%;
     width: 80px;
     height: 80px;
     background: transparent;
     opacity: 0.50;
+    vertical-align: middle;
 }
 
 .comment-author span
@@ -421,6 +424,11 @@ code
     color: #FFF;
 }
 
+#comments
+{
+    padding: 0px;
+}
+
 #share h1
 {
     margin-bottom: 32px;
@@ -435,6 +443,11 @@ code
     color: #FFF;
 }
 
+textarea
+{
+    border-right: 4px solid rgba(0, 0, 17, 0.2);
+}
+
 #article_save
 {
     margin-top: 15px;
@@ -444,7 +457,6 @@ code
 {
     margin-top: 10px;
 }
-
 
 #article_add_div a
 {

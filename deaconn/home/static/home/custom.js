@@ -186,4 +186,24 @@ $(document).ready(function()
         $grid.masonry('reloadItems');
         $grid.masonry('layout');
     }, 2000);
+
+    $('#comment_add').click(function()
+    {
+        if ($('#add_comment_contents').val().length < 15)
+        {
+            notify("Minimum of 15 characters allowed in comments.");
+
+            return false;
+        }
+    });
+
+    $('#comment_save').click(function()
+    {
+        if ($('#comment_contents').val().length < 15)
+        {
+            notify("Minimum of 15 characters allowed in comments.");
+
+            return false;
+        }
+    });
 });
