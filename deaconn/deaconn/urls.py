@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 from home.views import home_view
+from home.views import convert_with_markdown
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -24,6 +25,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view),
+    path('do_markdown/', convert_with_markdown),
     path('products/', include('products.urls')),
     path('blog/', include('blog.urls')),
     path('lbg/', include('lbg.urls'))

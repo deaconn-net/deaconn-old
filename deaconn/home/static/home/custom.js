@@ -122,4 +122,56 @@ $(document).ready(function()
         }
         
     });
+
+    setInterval(function()
+    {
+        item = $('#add-comment-area');
+
+        if (item.length && item.val().length > 0)
+        {
+            url = "/do_markdown/?contents=" + encodeURIComponent($('#add-comment-area').val());
+
+            $.get(url, function (data)
+            {
+                $('#add-comment-markdown').html(data);
+            });
+        }
+
+        item = $('#article_description');
+
+        if (item.length && item.val().length > 0)
+        {
+            url = "/do_markdown/?contents=" + encodeURIComponent(item.val());
+
+            $.get(url, function (data)
+            {
+                $('#article-description-markdown').html(data);
+            });
+        }
+
+        item = $('#article_contents');
+
+        if (item.length && item.val().length > 0)
+        {
+            url = "/do_markdown/?contents=" + encodeURIComponent(item.val());
+
+            $.get(url, function (data)
+            {
+                $('#article-contents-markdown').html(data);
+            });
+        }
+
+        item = $('#add_comment_contents');
+
+        if (item.length && item.val().length > 0)
+        {
+            url = "/do_markdown/?contents=" + encodeURIComponent(item.val());
+
+            $.get(url, function (data)
+            {
+                $('#add-comment-contents-markdown').html(data);
+            });
+        }
+
+    }, 2000);
 });

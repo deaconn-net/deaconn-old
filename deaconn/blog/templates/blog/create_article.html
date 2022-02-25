@@ -1,0 +1,86 @@
+{% load static %}
+{% load markdown %}
+{% load user_avatar %}
+
+{% if user and user.is_authenticated %}
+    {% if article_added %}
+        <script type="text/javascript">notify("Article made successfully!");</script>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'home/default_banner.jpg' %}" alt="header image">
+                <div class="card-body">
+                    <div id="article_edit">
+                        <form action="{% url 'blog:create_article' %}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="article_title">Title</label>
+                                        <input type="text" name="article_title" class="form-control" value="" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="article_tags">Tags</label>
+                                        <input type="text" name="article_tags" class="form-control" value="" />
+                                    </div>                 
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 text-center">
+                                    <div class="form-group">
+                                        <label for="article_description">Description</label>
+                                        <textarea id="article_description" name="article_description" class="form-control" cols="30" rows="10"></textarea>
+                                    </div>                                    
+                                </div>
+
+                                <div class="col-6">
+                                    <div id="article-description-markdown">
+        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 text-center">
+                                    <div class="form-group">
+                                        <label for="article_contents">Contents</label>
+                                        <textarea id="article_contents" name="article_contents" class="form-control" cols="50" rows="20"></textarea>
+                                    </div>                                    
+                                </div>
+                                <div class="col-6">
+                                    <div id="article-contents-markdown">
+        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="article_image">Image</label>
+                                        <input type="file" id="article-image" name="article_image" class="form-control" />
+                                    </div>                           
+                                </div>
+                            </div>
+
+                            <div class="text-center" id="article_save">
+                                <button class="btn btn-primary" type="submit">Add Article!</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% else %}
+        <p><h3 class="text-center">You are not authorized.</h3></p>
+{% endif %}
+    
