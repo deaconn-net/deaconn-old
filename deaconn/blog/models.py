@@ -1,6 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
+from django.template.defaultfilters import slugify
+
+
 def file_path(instance, filename):    
     return "{0}/{1}".format(instance.id, filename)
 
@@ -15,7 +19,15 @@ class Article(models.Model):
 
     contents = models.TextField(verbose_name = "Contents", help_text = "The article content.", max_length = 1000000)
 
-    image = models.ImageField(verbose_name = "Header Image", upload_to = file_path)
+    image = models.ImageField(verbose_name = "Header Image", upload_to = file_path, blank = True)
+
+    slug = models.SlugField(slugify('slug'), max_length = 60, blank = True)
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+
+        return super().save(*args, **kwargs)

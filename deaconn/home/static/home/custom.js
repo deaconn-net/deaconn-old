@@ -83,6 +83,17 @@ function copyTextToClipboard(text)
     });
 }
 
+function notify(msg)
+{
+    $('#noti-text').html(msg);
+    $('#notification').css("visibility", "visible");
+
+    setTimeout(function()
+    {
+        $('#notification').css("visibility", "hidden");
+    }, 2000);
+}
+
 /* Handle settings menu */
 $(document).ready(function()
 {

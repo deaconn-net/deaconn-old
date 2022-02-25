@@ -3,6 +3,8 @@ from django.shortcuts import render
 from . import models
 from django.conf import settings
 
+from django.template.defaultfilters import slugify
+
 def blog_view(request):
     info = {}
 
@@ -37,17 +39,27 @@ def blog_view(request):
 
     return render(request, 'home/page.html', info)
 
-def article_view(request, article_id):
+def article_view(request, article_id = None, slug = None):
     info = {}
-
-    # Common information.
-    info["template_name"] = 'blog/view_article.html'
-    info["title"] = 'Blog - Deaconn'
 
     # Retrieve article
     try:
         info["article"] = models.Article.objects.get(id = article_id)
     except Exception:
         info["article"] = False
+
+    # Common information.
+    info["template_name"] = 'blog/view_article.html'
+    info["title"] = 'Blog - Deaconn'
+
+    if not info["article"].slug:
+        info["article"].slug = slugify(info["article"].title)
+        info["article"].save()
+
+    if info["article"] != False:
+        info["title"] = info["article"].title + ' - Blog'
+        info["tags"] = info["article"].tags
+        info["description"] = info["article"].description
+        info["author"] = info["article"].author.first_name + " " + info["article"].author.last_name
 
     return render(request, 'home/page.html', info)

@@ -19,7 +19,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .codehilite .cm { color: #75715e } /* Comment.Multiline */
 .codehilite .cp { color: #75715e } /* Comment.Preproc */
 .codehilite .cpf { color: #75715e } /* Comment.PreprocFile */
-.codehilite .c1 { color: #75715e } /* Comment.Single */
+.codehilite .c1 { color: #28ff88 } /* Comment.Single */
 .codehilite .cs { color: #75715e } /* Comment.Special */
 .codehilite .gd { color: #f92672 } /* Generic.Deleted */
 .codehilite .ge { color: #f8f8f2; font-style: italic } /* Generic.Emph */

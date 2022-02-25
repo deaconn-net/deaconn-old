@@ -11,7 +11,7 @@ def do_tags(tags):
     tags = tags.split(',')
 
     for tag in tags:
-        ret = ret + '<span class="tag"><a href="' + reverse('blog:index') + '?s=' + tag + '">' + tag + '</a></span> '
+        ret = ret + '<a href="' + reverse('blog:index') + '?s=' + tag + '"><span class="tag">' + tag + '</span></a> '
 
     return mark_safe(ret)
 
