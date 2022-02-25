@@ -14,6 +14,16 @@ a
     border-bottom: 2px solid transparent;
 }
 
+.card > img
+{
+    opacity: 0.80;
+}
+
+img
+{
+    opacity: 0.90;
+}
+
 a:hover
 {
     color: rgb(0, 168, 235) !important;
@@ -22,13 +32,15 @@ a:hover
 
 #overlay 
 {
+    margin: auto;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     position: fixed;
-    z-index: 30;
-    background: rgba(0, 0, 0, 0.75);
+    z-index: auto;
+    background: #000000;
+    opacity: 0.80;
 }
 
 #background 
@@ -36,15 +48,16 @@ a:hover
     margin: auto;
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
     position: fixed;
-    z-index: -2;
+    z-index: -1;
 }
 
 .bgvid
 {
     min-width: 100%; 
     min-height: 100%;
-    z-index: -3;
 }
 
 #title
@@ -105,7 +118,6 @@ a:hover
 .card > img
 {
     border-radius: 15px 15px 0px 0px;
-    opacity: 0.80;
 }
 
 .card img
@@ -113,10 +125,9 @@ a:hover
     max-width: 100%;
 }
 
-.card > .card-body > h1
+.card > .card-body > h1, #share > h1
 {
     color: #FFF;
-    text-decoration: none;
 }
 
 .card > .card-body > p
@@ -171,18 +182,19 @@ footer .row > div:last-child
 
 #settings
 {
-    min-width: 130px;
+    min-width: 150px;
     padding: 10px;
-
     z-index: 50;
-    background-color: rgba(0, 0, 0, 0.80);
+    background: rgba(0, 216, 245, 0.115);
     border-radius: 0px 15px 0px 0px;
 }
 
 #settingsContent li
 {
     color: inherit;
-    background-color: rgba(0, 19, 24, 0.7);
+    background-color: transparent;
+    border: 1px solid #36363660;
+    text-align: center;
 }
 
 #settingsContent li:hover
@@ -212,12 +224,22 @@ footer .row > div:last-child
     margin-top: 5px;
 }
 
-.tag > a
+.tag:hover
+{
+    background: rgba(42, 156, 201, 0.7);
+}
+
+.category
+{
+    background: rgba(0, 211, 148, 0.7);
+}
+
+.tags a
 {
     color: inherit !important;
 }
 
-.tag > a:hover
+.tags a:hover
 {
     border-color: transparent;
 }
@@ -262,6 +284,8 @@ footer .row > div:last-child
 {
     font-size: 48px;
     cursor: pointer;
+    margin-right: 15px;
+    display: inline-block;
 }
 
 #share a:hover
@@ -276,10 +300,162 @@ pre code
 
 code
 {
-    color: #00c3ba !important;
+    color: #3ffdf4 !important;
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6
+.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6
 {
+    color: rgb(226, 226, 226) !important;
     margin-top: 1.5rem;
+}
+
+#notification
+{
+    padding: 15px 15px 15px 35px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    visibility: hidden;
+    background: rgba(0, 216, 245, 0.315);
+    color: #FFFFFF;
+    border-radius: 10px;
+}
+
+#article_details
+{
+    margin-top: 15px;
+}
+
+#search-n-ctags h3
+{
+    color: #FFF;
+}
+
+#ctags
+{
+    list-style-type: none;
+    text-align: center;
+}
+
+#ctags li
+{
+    display: inline-block;
+}
+
+#add-comment col:first-child
+{
+    border-right: 4px solid rgba(0, 0, 17, 0.2);
+}
+
+#add-comment-area
+{
+    background: rgba(0, 0, 15, 0.50);
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.post-btn
+{
+    font-size: 32px;
+    border: none;
+    background: transparent;
+    padding-right: 10px;
+}
+
+.edit
+{
+    color: rgb(0, 223, 223);
+}
+
+.delete
+{
+    color: rgb(0, 74, 143);
+}
+
+.edit:hover, .delete:hover
+{
+    color: rgb(54, 98, 139);
+}
+
+.comment
+{
+    border-radius: 3px;
+    margin-bottom: 15px;
+    background: rgba(0, 32, 34, 0.333);
+}
+
+.comment-author
+{
+    background: rgba(0, 32, 34, 0.333);
+    border-right: 4px solid rgba(0, 0, 17, 0.2);
+    padding: 15px;
+    color: #FFF;
+    height: inherit;
+}
+
+.comment-author img
+{
+    margin-right: 10px;
+    max-width: 100%;
+    max-height: 100%;
+    width: 80px;
+    height: 80px;
+}
+
+.comment-author span
+{
+    font-size: 32px;
+    vertical-align: middle;
+}
+
+.comment-contents
+{
+    padding: 15px;
+}
+
+.comment-date
+{
+    margin-top: 10px;
+}
+
+#comments h1
+{
+    color: #FFF;
+}
+
+#share h1
+{
+    margin-bottom: 32px;
+}
+
+#article_edit input, #article_edit textarea, #comment_edit input, #comment_edit textarea, #add-comment input, #add-comment textarea
+{
+    border-radius: 10px;
+    background: rgba(0, 32, 34, 0.333);
+    padding: 15px;
+    border: none;
+    color: #FFF;
+}
+
+#article_save
+{
+    margin-top: 15px;
+}
+
+#comment-save
+{
+    margin-top: 10px;
+}
+
+
+#article_add_div a
+{
+    color: rgb(0, 69, 71);
+    font-size: 48px;
+}
+
+#article_add_div a:hover
+{
+    border-color: transparent;
 }

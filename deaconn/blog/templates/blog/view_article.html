@@ -1,25 +1,231 @@
 {% load static %}
 {% load markdown %}
+{% load user_avatar %}
 
 {% if article != False %}
+    {% if comment_successful %}
+        <script type="text/javascript">notify("Comment made successfully!");</script>
+    {% endif %}
+
+    {% if article_edited %}
+        <script type="text/javascript">notify("Article edited successfully!");</script>
+    {% endif %}
+
+    {% if comment_edited %}
+        <script type="text/javascript">notify("Comment edited successfully!");</script>
+    {% endif %}
+
+    {% if article_deleted %}
+        <script type="text/javascript">notify("Article deleted successfully!");</script>
+    {% endif %}
+
+    {% if comment_deleted %}
+        <script type="text/javascript">notify("Comment deleted successfully!");</script>
+    {% endif %}
+
     <div class="row">
         <div class="col-md-12 col-lg-12">
             <div class="card">
-                <img class="card-img-top" src="{{ article.image.url }}" alt="header image">
+                <img class="card-img-top" src="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}" alt="header image">
                 <div class="card-body">
-                    <h1 class="card-title text-center">{{ article.title }}</h1>
-                    <div class="markdown">
-                        {{ article.contents | do_markdown }}
+                    {% if article_edit %}
+                        <div id="article_edit">
+                            <form action="{% url 'blog:article' article_id=article.id slug=article.slug %}" enctype="multipart/form-data" method="POST">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="article_title">Title</label>
+                                            <input type="text" name="article_title" class="form-control" value="{{ article.title }}" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="article_tags">Tags</label>
+                                            <input type="text" name="article_tags" class="form-control" value="{{ article.tags }}" />
+                                        </div>                 
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6 text-center">
+                                        <div class="form-group">
+                                            <label for="article_description">Description</label>
+                                            <textarea id="article_description" name="article_description" class="form-control" cols="30" rows="10">{{ article.description }}</textarea>
+                                        </div>                                    
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div id="article-description-markdown">
+            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6 text-center">
+                                        <div class="form-group">
+                                            <label for="article_contents">Contents</label>
+                                            <textarea id="article_contents" name="article_contents" class="form-control" cols="50" rows="20">{{ article.contents }}</textarea>
+                                        </div>                                    
+                                    </div>
+                                    <div class="col-6">
+                                        <div id="article-contents-markdown">
+            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="article_image">Image</label>
+                                            <input type="file" id="article-image" name="article_image" class="form-control" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="article_image_del">Delete Image</label>
+                                            <input type="checkbox" id="article-image-del" name="article_image_del"  value="Lol" />
+                                        </div>                                   
+                                    </div>
+                                </div>
+
+                                <div class="text-center" id="article_save">
+                                    <button class="btn btn-primary" type="submit">Save Article!</button>
+                                </div>
+                            </form>
+                        </div>
+                    {% else %}
+                        <h1 class="card-title text-center">{{ article.title }}</h1>
+                        <div class="markdown">
+                            {{ article.contents | do_markdown }}
+                        </div>
+                    {% endif %}
+
+                    <div class="row">
+                        <div class="col col-md-6 col-sm-12 text-start">
+                            <p class="card-text" id="article_details">
+                                <small>By <span class="flair">{% if article.author.first_name %}{{ article.author.first_name }} {{ article.author.last_name }}{% else %}{{ article.author.username }}{% endif %}</span></small>
+                                <br />
+                                <small>Created On <span class="flair">{{ article.date_added }}</span></small>
+                            </p>
+                        </div>
+                        {% if user.is_authenticated and user.id == article.author.id and not article_edit %}
+                            <div class="col col-md-6 col-sm-12 text-end">
+                                <p class="card-text">
+                                    <form action="{% url 'blog:article' article_id=article.id slug=article.slug %}" method="POST">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="article_id" value="{{ article.id }}" />
+                                        <button type="submit" class="post-btn edit" name="article_edit"><i class="bi bi-pencil-fill"></i></button>
+                                        <button type="submit" class="post-btn delete" name="article_delete"><i class="bi bi-backspace-fill"></i></button>
+                                    </form>
+                                </p>
+                            </div>
+                        {% endif %}
                     </div>
-                    <p class="card-text"><small>By <span class="flair">{{ article.author.first_name }} {{ article.author.last_name }}</span></small></p>
-                    <p class="card-text"><small>Created On <span class="flair">{{ article.date_added }}</span></small></p>
                     <br /><br />
                     <div class="text-center" id="share">
-                        <h3>Share!</h3>
-                        <p><a onclick='copyTextToClipboard("{{ request.build_absolute_uri }}");'><i class="bi bi-share-fill"></i></a></p>
+                        <h1>Share!</h1>
+                        <p>
+                            <a onclick='copyTextToClipboard("{{ request.build_absolute_uri }}"); notify("Article link copied to clipboard!");'><i class="bi bi-share-fill"></i></a>
+                            <a href="https://twitter.com/intent/tweet?text={{ request.build_absolute_uri }}" target="_blank"><i class="bi bi-twitter"></i></a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" target="_blank"><i class="bi bi-facebook"></i></a>
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 col-lg-12" id="comments">
+            <h1 class="text-center">Comments</h1>
+            {% if comments %}
+                {% for comment in comments %}
+                    <div class="comment">
+                        <div class="row">
+                            <div class="col-3 comment-author">
+                                <img src="{{ comment.author | get_avatar }}" />
+
+                                <span>{% if comment.author.first_name %}{{ comment.author.first_name}} {{ comment.author.last_name }} {% else %} {{ comment.author.username }}{% endif %}</span>
+                                <div class="comment-date">
+                                    <small>{{ comment.date_added }}</small>
+                                </div>
+                            </div>
+                            <div class="col-9 comment-contents">
+                                {% if comment_edit and comment.id|stringformat:'s' == request.POST.comment_id|stringformat:'s' %}
+                                    <div id="comment_edit">
+                                        <form action="{% url 'blog:article' article_id=article.id slug=article.slug %}" method="POST">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="comment_id" value="{{ comment.id }}" />
+                                            <div class="row">
+                                                <div class="col-6 text-center">
+                                                    <div class="form-group">
+                                                        <label for="comment_contents">Contents</label>
+                                                        <textarea id="comment_contents" name="comment_contents" class="form-control" cols="50" rows="10">{{ comment.contents }}</textarea>
+                                                    </div>
+                                                    <div id="comment-save" class="text-center">
+                                                        <button type="submit" class="btn btn-primary">Save!</button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div id="comment-contents-markdown">
+                
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                {% else %}
+                                    {{ comment.contents | do_markdown }}
+                                    <div class="text-end">
+                                        {% if user.is_authenticated and user.id == comment.author.id and not comment_edit %}
+                                            <form action="{% url 'blog:article' article_id=article.id slug=article.slug %}" method="POST">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="comment_id" value="{{ comment.id }}" />
+                                                <button type="submit" class="post-btn edit" name="comment_edit"><i class="bi bi-pencil-fill"></i></button>
+                                                <button type="submit" class="post-btn delete" name="comment_delete"><i class="bi bi-backspace-fill"></i></button>
+                                            </form>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="text-center">
+                    <p class="text-center fst-italic">No comments found.</p>
+                </div>
+            {% endif %}
+
+            {% if user and user.is_authenticated %}
+                <div id="add-comment"">
+                    <div class="row">
+                        <div class="col col-md-6 col-sm-12 class="text-center">
+                            <form action="{% url 'blog:article' article_id=article.id slug=article.slug %}" method="POST">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <textarea id="add_comment_contents" name="add_comment_contents" class="form-control" rows="10" cols="50"></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <span class="fst-italic">* Markdown Supported</span>
+                                    <br />
+                                    <br />
+                                    <button class="btn btn-primary" type="submit">Add Comment!</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col col-md-6 col-sm-12">
+                            <div id="add-comment-contents-markdown">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
         </div>
     </div>
 {% else %}
