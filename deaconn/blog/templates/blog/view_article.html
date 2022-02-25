@@ -201,7 +201,7 @@
                 </div>
             {% endif %}
 
-            {% if user and user.is_authenticated %}
+            {% if user and user.is_authenticated and not article_edit and not comment_edit %}
                 <div id="add-comment"">
                     <div class="row">
                         <div class="col col-md-6 col-sm-12 class="text-center">

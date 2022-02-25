@@ -129,9 +129,9 @@ $(document).ready(function()
 
         if (item.length && item.val().length > 0)
         {
-            url = "/do_markdown/?contents=" + encodeURIComponent($('#add-comment-area').val());
+            url = "/do_markdown/";
 
-            $.get(url, function (data)
+            $.post(url, {contents: item.val()}, function (data)
             {
                 $('#add-comment-markdown').html(data);
             });
@@ -141,9 +141,9 @@ $(document).ready(function()
 
         if (item.length && item.val().length > 0)
         {
-            url = "/do_markdown/?contents=" + encodeURIComponent(item.val());
+            url = "/do_markdown/";
 
-            $.get(url, function (data)
+            $.post(url, {contents: item.val()}, function (data)
             {
                 $('#article-description-markdown').html(data);
             });
@@ -153,9 +153,9 @@ $(document).ready(function()
 
         if (item.length && item.val().length > 0)
         {
-            url = "/do_markdown/?contents=" + encodeURIComponent(item.val());
+            url = "/do_markdown/";
 
-            $.get(url, function (data)
+            $.post(url, {contents: item.val()}, function (data)
             {
                 $('#article-contents-markdown').html(data);
             });
@@ -165,9 +165,9 @@ $(document).ready(function()
 
         if (item.length && item.val().length > 0)
         {
-            url = "/do_markdown/?contents=" + encodeURIComponent(item.val());
+            url = "/do_markdown/";
 
-            $.get(url, function (data)
+            $.post(url, {contents: item.val()}, function (data)
             {
                 $('#add-comment-contents-markdown').html(data);
             });

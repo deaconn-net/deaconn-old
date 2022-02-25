@@ -336,11 +336,6 @@ code
     text-align: center;
 }
 
-#ctags li
-{
-    display: inline-block;
-}
-
 #add-comment col:first-child
 {
     border-right: 4px solid rgba(0, 0, 17, 0.2);
