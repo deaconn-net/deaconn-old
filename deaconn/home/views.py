@@ -4,6 +4,8 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 
+from django.views.decorators.csrf import csrf_exempt
+
 def home_view(request):
     info = {}
     info["gh_stars"] = 243
@@ -14,8 +16,12 @@ def home_view(request):
     info["title"] = 'Home - Deaconn'
     return render(request, 'home/page.html', info)
 
+@csrf_exempt
 def convert_with_markdown(request):
-    contents = request.GET["contents"]
+    contents = None
+
+    if 'contents' in request.POST:
+        contents = request.POST["contents"]
 
     if contents is None:
         return HttpResponse("404")
