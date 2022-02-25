@@ -93,7 +93,7 @@
                                 </div>
 
                                 <div class="text-center" id="article_save">
-                                    <button class="btn btn-primary" type="submit">Save Article!</button>
+                                    <button class="btn btn-primary post-btn" type="submit">Save Article!</button>
                                 </div>
                             </form>
                         </div>
@@ -146,12 +146,12 @@
                 {% for comment in comments %}
                     <div class="comment">
                         <div class="row">
-                            <div class="col-3 comment-author">
+                            <div class="col-3 comment-author text-center">
                                 <img src="{{ comment.author | get_avatar }}" />
 
-                                <span>{% if comment.author.first_name %}{{ comment.author.first_name}} {{ comment.author.last_name }} {% else %} {{ comment.author.username }}{% endif %}</span>
+                                <p><span>{% if comment.author.first_name %}{{ comment.author.first_name}} {{ comment.author.last_name }} {% else %} {{ comment.author.username }}{% endif %}</span></p>
                                 <div class="comment-date">
-                                    <small>{{ comment.date_added }}</small>
+                                    <p><small>{{ comment.date_added }}</small></p>
                                 </div>
                             </div>
                             <div class="col-9 comment-contents">
@@ -167,7 +167,7 @@
                                                         <textarea id="comment_contents" name="comment_contents" class="form-control" cols="50" rows="10">{{ comment.contents }}</textarea>
                                                     </div>
                                                     <div id="comment-save" class="text-center">
-                                                        <button type="submit" class="btn btn-primary">Save!</button>
+                                                        <button type="submit" class="btn btn-primary post-btn" id="comment_save">Save!</button>
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
@@ -207,6 +207,9 @@
                         <div class="col col-md-6 col-sm-12 class="text-center">
                             <form action="{% url 'blog:article' article_id=article.id slug=article.slug %}" method="POST">
                                 {% csrf_token %}
+                                <div class="text-center">
+                                    <h1>Add Comment</h1>
+                                </div>
                                 <div class="form-group">
                                     <textarea id="add_comment_contents" name="add_comment_contents" class="form-control" rows="10" cols="50"></textarea>
                                 </div>
@@ -214,7 +217,7 @@
                                     <span class="fst-italic">* Markdown Supported</span>
                                     <br />
                                     <br />
-                                    <button class="btn btn-primary" type="submit">Add Comment!</button>
+                                    <button class="btn btn-primary post-btn" id="comment_add" type="submit">Add Comment!</button>
                                 </div>
                             </form>
                         </div>
