@@ -135,7 +135,7 @@ $(document).ready(function()
 
     setInterval(function()
     {
-        item = $('#add-comment-area');
+        item = $('#comment_contents');
 
         if (item.length && item.val().length > 0)
         {
@@ -143,7 +143,7 @@ $(document).ready(function()
 
             $.post(url, {contents: item.val()}, function (data)
             {
-                $('#add-comment-markdown').html(data);
+                $('#comment-contents-markdown').html(data);
             });
         }
 
