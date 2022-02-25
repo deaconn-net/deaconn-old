@@ -11,7 +11,7 @@ def get_avatar(user):
     if profile.avatar:
         return profile.avatar.url
     else:
-        return static('user/default.jpg')
+        return static('user/default.png')
 
 register.filter('get_avatar', get_avatar)
 
