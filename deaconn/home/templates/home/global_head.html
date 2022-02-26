@@ -16,6 +16,7 @@
 <meta content="{{ request.build_absolute_uri }}" property="og:url">
 <meta content="{% if article.author %}{% if article.author.first_name %}{{ article.author.first_name }} {{ article.author.last_name }}{% else %}{{ article.author.username }}{% endif %}{% else %}Christian Deacon{% endif %}" name="author">
 <meta content="{% if article.description %}{{ article.description }}{% else %}Christian Deacon's products and career.{% endif %}" property="og:description">
+<meta content="{{ title }}" type="og:title">
 <meta content="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}" name="thumbnail">
 <meta content="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}" name="twitter:image">
 <link rel="image_src" href="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}">
@@ -24,3 +25,4 @@
 <meta itemprop="image" content="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}">
 <meta itemprop="thumbnailUrl" content="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}">
 <meta itemprop="alternativeHeadline" content="{% if article.description %}{{ article.description }}{% else %}Christian Deacon's products and career.{% endif %}">
+<meta property="og:locale" content="en_us" />
