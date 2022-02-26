@@ -6,23 +6,30 @@
 <meta name="keywords" content="Deaconn, christian, deacon, products, technology, lbg, {% if tags %}{{ tags }}{% endif %}">
 <meta name="author" content="{% if author %}{{ author }}{% else %}Christian Deacon{% endif %}">
 
+
+<meta content="{{ title }}" property="og:title">
+<meta content="{% if article.description %}{{ article.description }}{% else %}Christian Deacon's products and career.{% endif %}" property="og:description">
+<meta  content="en_us" property="og:locale">
+
+<meta content="{% if article.author %}{% if article.author.first_name %}{{ article.author.first_name }} {{ article.author.last_name }}{% else %}{{ article.author.username }}{% endif %}{% else %}Christian Deacon{% endif %}" property="og:author">
+<meta content="{% if article.date_added %}{{ article.date_added }}{% endif %}" property="og:pubdate">
+<meta content="{{ request.build_absolute_uri }}" property="og:url">
+<meta content="article" property="og:type">
+
+<meta content="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}" property="og:image">
 <meta content="619" property="og:image:height">
 <meta content="1100" property="og:image:width">
-<meta content="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}" property="og:image">
 
-<meta content="{% if article.date_added %}{{ article.date_added }}{% endif %}" property="og:pubdate">
+<!--
 <meta itemprop="datePublished" content="{% if article.date_added %}{{ article.date_added }}{% endif %}">
 <meta itemprop="dateCreated" content="{% if article.date_added %}{{ article.date_added }}{% endif %}">
-<meta content="{{ request.build_absolute_uri }}" property="og:url">
-<meta content="{% if article.author %}{% if article.author.first_name %}{{ article.author.first_name }} {{ article.author.last_name }}{% else %}{{ article.author.username }}{% endif %}{% else %}Christian Deacon{% endif %}" name="author">
-<meta content="{% if article.description %}{{ article.description }}{% else %}Christian Deacon's products and career.{% endif %}" property="og:description">
-<meta content="{{ title }}" type="og:title">
+
 <meta content="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}" name="thumbnail">
 <meta content="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}" name="twitter:image">
 <link rel="image_src" href="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}">
 <meta content="summary_large_image" name="twitter:card">
-<meta content="article" property="og:type">
+
 <meta itemprop="image" content="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}">
 <meta itemprop="thumbnailUrl" content="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}">
 <meta itemprop="alternativeHeadline" content="{% if article.description %}{{ article.description }}{% else %}Christian Deacon's products and career.{% endif %}">
-<meta property="og:locale" content="en_us" />
+-->
