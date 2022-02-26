@@ -16,8 +16,9 @@
 <meta content="{{ request.build_absolute_uri }}" property="og:url">
 <meta content="article" property="og:type">
 
-<meta content="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}" property="og:image">
 <!--
+<meta content="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}" property="og:image">
+
 <meta content="619" property="og:image:height">
 <meta content="1100" property="og:image:width">
 
