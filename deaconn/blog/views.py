@@ -82,10 +82,8 @@ def article_view(request, article_id = None, slug = None):
                 info["article"].tags = request.POST['article_tags']
                 info["article"].contents = request.POST['article_contents']
 
-                print("Checking image.")
                 if 'article_image' in request.FILES:
                     info["article"].image = request.FILES['article_image']
-                    print("Assigning image!")
                 elif 'article_image_del' in request.POST:
                     info["article"].image = None
 
@@ -152,14 +150,12 @@ def article_view(request, article_id = None, slug = None):
         info["comments"] = models.Comment.objects.filter(article = info["article"])
 
         # Fill out other information.
-        info["title"] = info["article"].title + ' - Blog'
+        info["title"] = info["article"].title
         info["tags"] = info["article"].tags
         info["description"] = info["article"].description
         info["author"] = info["article"].author.first_name + " " + info["article"].author.last_name
 
     return render(request, 'home/page.html', info)
-
-
 
 def create_article(request):
     info = {}
