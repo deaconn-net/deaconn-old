@@ -17,10 +17,11 @@
 <meta content="article" property="og:type">
 
 <meta content="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}" property="og:image">
+<!--
 <meta content="619" property="og:image:height">
 <meta content="1100" property="og:image:width">
 
-<!--
+
 <meta itemprop="datePublished" content="{% if article.date_added %}{{ article.date_added }}{% endif %}">
 <meta itemprop="dateCreated" content="{% if article.date_added %}{{ article.date_added }}{% endif %}">
 
