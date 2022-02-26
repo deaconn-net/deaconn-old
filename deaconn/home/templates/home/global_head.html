@@ -8,13 +8,14 @@
 
 
 <meta content="{{ title }}" property="og:title">
+<meta content="Deaconn" property="og:site_name">
 <meta content="{% if article.description %}{{ article.description }}{% else %}Christian Deacon's products and career.{% endif %}" property="og:description">
 <meta  content="en_us" property="og:locale">
 
 <meta content="{% if article.author %}{% if article.author.first_name %}{{ article.author.first_name }} {{ article.author.last_name }}{% else %}{{ article.author.username }}{% endif %}{% else %}Christian Deacon{% endif %}" property="og:author">
 <meta content="{% if article.date_added %}{{ article.date_added }}{% endif %}" property="og:pubdate">
 <meta content="{{ request.build_absolute_uri }}" property="og:url">
-<meta content="article" property="og:type">
+<meta content="{{% if article %}article{% else %}website{% endif %}" property="og:type">
 
 <meta content="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}" property="og:image">
 
