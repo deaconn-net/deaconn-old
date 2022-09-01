@@ -2,14 +2,14 @@
 
 <title>{{ title }}</title>
 <meta charset="utf-8">
-<meta name="description" content="{% if description %}{{ description }}{% else %}Christian Deacon's products and career.{% endif %}">
+<meta name="description" content="{% if description %}{{ description }}{% else %}Christian Deacon's website and portfolio.{% endif %}">
 <meta name="keywords" content="Deaconn, christian, deacon, products, technology, lbg, {% if tags %}{{ tags }}{% endif %}">
 <meta name="author" content="{% if author %}{{ author }}{% else %}Christian Deacon{% endif %}">
 
 
 <meta content="{{ title }}" property="og:title">
 <meta content="Deaconn" property="og:site_name">
-<meta content="{% if article.description %}{{ article.description }}{% else %}Christian Deacon's products and career.{% endif %}" property="og:description">
+<meta content="{% if article.description %}{{ article.description }}{% else %}Christian Deacon's website and portfolio.{% endif %}" property="og:description">
 <meta  content="en_us" property="og:locale">
 
 <meta content="{% if article.author %}{% if article.author.first_name %}{{ article.author.first_name }} {{ article.author.last_name }}{% else %}{{ article.author.username }}{% endif %}{% else %}Christian Deacon{% endif %}" property="og:author">
@@ -32,4 +32,4 @@
 
 <meta itemprop="image" content="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}">
 <meta itemprop="thumbnailUrl" content="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}">
-<meta itemprop="alternativeHeadline" content="{% if article.description %}{{ article.description }}{% else %}Christian Deacon's products and career.{% endif %}">
+<meta itemprop="alternativeHeadline" content="{% if article.description %}{{ article.description }}{% else %}Christian Deacon's website and portfolio.{% endif %}">
