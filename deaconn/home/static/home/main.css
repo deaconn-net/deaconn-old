@@ -10,6 +10,7 @@
 .tmc:hover
 {
     color: rgb(0, 231, 112) !important;
+    border-color: rgb(0, 219, 154);
 }
 
 body 
