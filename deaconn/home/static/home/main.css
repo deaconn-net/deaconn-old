@@ -13,6 +13,11 @@
     border-color: rgb(0, 219, 154);
 }
 
+.nav-item > .tmc:hover
+{
+    border-color: transparent;
+}
+
 body 
 {
     margin: 0px;
