@@ -470,3 +470,13 @@ textarea
 {
     border-color: transparent;
 }
+
+.tmc > a, .tmc > a:active, .tmc > a:focus, .tmc > a:link
+{
+    color: rgb(33, 139, 84);
+}
+
+.tmc > a:hover
+{
+    color: rgb(31, 170, 98);
+}
