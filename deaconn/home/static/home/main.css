@@ -87,22 +87,22 @@ a:hover:not(.tmc)
     text-decoration: none !important;
 }
 
-.nav-item:is(.active):not(.tmc) > a
+.nav-item:is(.active) > a:not(.tmc)
 {
     color: #FFF !important;
 }
 
-.nav-item:not(.active):not(.tmc) > a
+.nav-item:not(.active) > a:not(.tmc)
 {
     color: rgb(151, 151, 151) !important;
 }
 
-.nav-item:not(.active):not(.tmc) > a:hover
+.nav-item:not(.active) > a:hover:not(.tmc)
 {
     color: #FFF !important;
 }
 
-.nav-item:is(.active) > a, .nav-item:not(.active):not(.tmc) > a:hover
+.nav-item:is(.active) > a, .nav-item:not(.active) > a:hover:not(.tmc)
 {
     border-color: transparent;
 }
