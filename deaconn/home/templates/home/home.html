@@ -7,6 +7,7 @@
             <div class="card-body">
                 <h1 class="card-title text-center">What Is Deaconn?</h1>
                 <p class="card-text">Dea<span class="flair">conn</span> is Christian Deacon's website and portfolio.</p>
+                <p><img src="{% static 'home/me.jpeg' %}" alt="image of Christian" /></p>
                 <p class="card-text">I am a self-taught technical engineer interested in programming/modding, networking, and general technical engineering. I enjoy learning, progressing/improving, and working within many areas in the technology industry. This ranges from game modding/programming, network programming (e.g. (D)DoS protection/mitigation), pen-testing, web development/general tools, and AI/robotic engineering (includes machine learning) to giving suggestions/feedback on how to improve tools/mods. I really enjoy writing and constructing plans as well!</p>
             </div>
         </div>
@@ -56,6 +57,7 @@
                         <li>Managing over <span class="flair">fifty</span> dedicated servers/VPSs running a combination of Linux/Windows for game and web servers (along with custom kernels/configurations).</li>
                         <li>Providing customer <span class="flair">support</span>.</li>
                         <li>Working and communicating with a <span class="flair">variety</span> of different teams including my own teams.</li>
+                        <li>Communicate with <span class="flair">large game companies</span> such as Valve, Tripwire, and EA/DICE via reporting bugs/exploits, suggestions on how to improve functionality/the community, and more!</li>
                         <li>Running <span class="flair">businesses</span>.</li>
                         <li>Marketing/<span class="flair">advertising</span>.</li>
                         <li>Designing <span class="flair">attractive</span> websites.</li>
@@ -94,6 +96,117 @@
 
     <div class="col">
         <div class="card">
+            <img class="card-img-top" src="{% static 'home/references.webp' %}" alt="image">
+            <div class="card-body">
+                <h1 class="card-title text-center">External Professional Experience</h1>
+                <p class="card-text">Although I have a lot of professional experience from my own projects, I also have worked for the following companies and gained additional experience from them.
+                    <ul>
+                        <li><a href="https://path.net/" target="_blank">Path Networks</a> • <span class="flair">XDP Developer</span> • Mar, 2022 - May, 2022
+                            <ul>
+                                <li>Developed <span class="flair">(D)DoS protection</span> for Path Network's global Anycast network with over <span class="flair">ten terabits per second</span> of network capacity.</li>
+                                <li>Reverse engineered applications and created <span class="flair">layer 3-7 filters</span>.</li>
+                                <li>Investigated packet captures of <span class="flair">malicious network traffic</span> making it through filters.</li>
+                            </ul>
+                        </li>
+                        <li><a href="https://gameserverkings.com/" target="_blank">Gameserverkings</a> • <span class="flair">Devops Engineer</span> • Mar, 2021 - February, 2022
+                            <ul>
+                                <li>Developed the <span class="flair">base</span> and <span class="flair">starting features</span> of a (D)DoS mitigation system that would be used with Gameserverking's global Anycast network.</li>
+                                <li><span class="flair">Reverse engineered</span> applications and created <span class="flair">layer 3-7 filters</span>, mostly for game servers which are highly targeted by malicious users.</li>
+                                <li>Created a packet <span class="flair">caching</span> mechanism that responds to incoming requests on each edge of the Anycast network for distribution against certain layer 3-7 (D)DoS attacks.</li>
+                                <li>Learned about deploying an Anycast network's own <span class="flair">infrastructure</span> such as buying fiber lines, data center equipment, BGP routing, routers, switches, and more.</li>
+                                <li>Communicated and worked with <span class="flair">Linux kernel developers</span>, specifically into networking/XDP to address issues with XDP/BPF and find solutions for code that is safe, but the BPF verifier disagreed due to its strict limitations.</li>
+                            </ul>
+                        </li>
+                        <li><a href="https://pax8.com/" target="_blank">Pax8</a> • <span class="flair">L2 Technical Support</span> • Jan, 2018 - Mar, 2021
+                            <ul>
+                                <li>Provide customer <span class="flair">service/support</span> with issues on a variety of <span class="flair">vendors and products</span>.</li>
+                                <li>Primarily focus on <span class="flair">infrastructure-related</span> issues with cloud products such as Microsoft <span class="flair">Azure</span>, Nerdio, IONOS/ProfitBricks, and more.</li>
+                                <li>Made security and <span class="flair">best-practice recommendations</span> for multiple products and partner/customer infrastructure and firewalls.</li>
+                                <li>Work as a <span class="flair">team</span> to resolve complicated support issues and discuss how we can improve the department.</li>
+                                <li>Provide <span class="flair">training</span> to co-workers by writing <span class="flair">knowledge base articles</span>, having one on one sessions, etc.</li>
+                            </ul>
+                        </li>
+                        <li><a href="https://homedepot.com/" target="_blank">Home Depot</a> • <span class="flair">Lot Tech</span> • Nov, 2016 - February, 2018
+                            <ul>
+                                <li>Provide customer <span class="flair">service/support</span> for products at Home Depot.</li>
+                                <li>General Lot Tech responsibilities (e.g. <span class="flair">assisting</span> customers load up their vehicles).</li>
+                            </ul>
+                        </li>
+                        <li>Holy Tomato Two • <span class="flair">Food Prep</span> • August, 2015 - June, 2016
+                            <ul>
+                                <li>Help management with <span class="flair">food preparation</span>.</li>
+                                <li>A Senior Year-like job.</li>
+                            </ul>
+                        </li>
+                        <li><a href="https://pcs.net/" target="_blank">PCS</a> • <span class="flair">Intern</span> • June, 2015 - September, 2016
+                            <ul>
+                                <li>A Summer/early school year job along with my first job.</li>
+                                <li>Managed the technology of a large school district in <span class="flair">Vineland, New Jersey, US</span>.</li>
+                                <li><span class="flair">Re-imaged</span> many Windows computers and setup Windows <span class="flair">policies</span>.</li>
+                                <li>Relocate and setup <span class="flair">technical equipment</span>.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card">
+            <img class="card-img-top" src="{% static 'home/homelab.jpg' %}" alt="image">
+            <div class="card-body">
+                <h1 class="card-title text-center">My Home Lab</h1>
+
+                <p class="card-text">I have a complex <span class="flair">home lab</span> environment which consists of two home servers, multiple powerful computers/laptops running Windows and Linux desktop software, an EdgeRouter, switches, vLANs, Raspberry PIs, and more!</p>
+
+                <h3>Home Server #1</h3>
+                <p class="card-text">
+                    <ul>
+                        <li>Runs <span class="flair">QEMU/KVM</span> with <span class="flair">Ubuntu Server</span> for virtual machine, network, and vLAN creations plus more!</li>
+                        <li>AMD Ryzen 5 3600 (6c/12t) @ <span class="flair">3.6 GHz</span>.</li>
+                        <li>32 GBs of <span class="flair">DDR4</span> RAM.</li>
+                        <li>1 TBs <span class="flair">SSD</span>.</li>
+                        <li><span class="flair">3 TBs</span> HDD.</li>
+                        <li>1 and <span class="flair">10 gbps</span> NICs.</li>
+                        <li><span class="flair">Custom</span> built myself.</li>
+                    </ul>
+                </p>
+
+                <h3>Home Server #2</h3>
+                <p class="card-text">
+                    <ul>
+                        <li>Runs <span class="flair">Proxmox</span> for virtual machine, network, and vLAN creations plus more!</li>
+                        <li>Intel Xeon L5640 (<span class="flair">6c/12t</span>) @ 2.26 GHz.</li>
+                        <li><span class="flair">32 GBs</span> of DDR3 RAM.</li>
+                        <li>500 GBs HDD.</li>
+                        <li><span class="flair">1 gbps</span> NIC.</li>
+                        <li>Purchased off of Amazon <span class="flair">pre-built</span> due to the price being cheaper.</li>
+                    </ul>
+                </p>
+
+                <p class="card-text">I've also accomplished the following with this home lab!
+                    <ul>
+                        <li>Created VMs, setup, and maintained <span class="flair">operating systems</span> and <span class="flair">firewalls</span> in Ubuntu, Debian, CentOS, Kali Linux, Rocky Linux, BSD (Free, Net, and Open), Windows Server 2003/2008/2016/2019, Windows 10, and more.</li>
+                        <li>Use <span class="flair">development VMs</span> to test applications I make with networking, Linux, and more!</li>
+                        <li>Experimented with <span class="flair">OS-based firewalls</span> on all Linux/BSD OS's such as IPTables, NFTables, TC (Traffic Control), and more.</li>
+                        <li>Setup VPN servers such as OpenVPN from <span class="flair">scratch</span>.</li>
+                        <li>Built <span class="flair">custom</span> Linux kernels that enabled features for low-level programming using TC (Traffic Control) and XDP hooks.</li>
+                        <li>Performed <span class="flair">pen-testing</span> using my <span class="flair">own software</span> (open-source on my GitHub profile) that consisted of UDP floods and layer 3 - 7 specific header/payload attacks.</li>
+                        <li>Learned and setup <span class="flair">container software</span> such as Container, LXC, and more. Also have experience with utilizing Docker Compose.</li>
+                        <li>Setup test game/web servers and <span class="flair">reverse engineered</span> binaries using software like IDA to find signatures and offsets for SourceMod.</li>
+                        <li>Setup a <span class="flair">Plex</span> server for media streaming.</li>
+                        <li>Setup many different virtual vLANs and networks for <span class="flair">security</span>, performance, and organization.</li>
+                    </ul>
+                </p>
+                
+                <p class="card-text">I use my Raspberry PIs for game/media streaming to my TVs and also my <span class="flair">own networking monitor</span> for my home network!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card">
             <img class="card-img-top" src="{% static 'home/os-stats.jpg' %}" alt="image">
             <div class="card-body">
                 <h1 class="card-title text-center">Open Source Stats</h1>
@@ -114,7 +227,7 @@
             <img class="card-img-top" src="{% static 'home/references.webp' %}" alt="image">
             <div class="card-body">
                 <h1 class="card-title text-center">References</h1>
-                <p class="fst-italic">Will be completed in the near future.</p>
+                <p class="fst-italic text-center card-text">Will be completed in the near future.</p>
             </div>
         </div>
     </div>
