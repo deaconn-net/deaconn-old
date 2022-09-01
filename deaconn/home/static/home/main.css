@@ -92,17 +92,17 @@ a:hover:not(.tmc)
     color: #FFF !important;
 }
 
-.nav-item:not(.active .tmc) > a
+.nav-item:not(.active):not(.tmc) > a
 {
     color: rgb(151, 151, 151) !important;
 }
 
-.nav-item:not(.active .tmc) > a:hover
+.nav-item:not(.active):not(.tmc) > a:hover
 {
     color: #FFF !important;
 }
 
-.nav-item:is(.active) > a, .nav-item:not(.active .tmc) > a:hover
+.nav-item:is(.active) > a, .nav-item:not(.active):not(.tmc) > a:hover
 {
     border-color: transparent;
 }
