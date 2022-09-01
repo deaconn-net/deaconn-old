@@ -3,6 +3,8 @@
 .tmc, .tmc:active, .tmc:focus, .tmc:link
 {
     color: rgb(0, 204, 99) !important;
+    text-decoration: none !important;
+    border-bottom: 2px solid transparent;
 }
 
 .tmc:hover
