@@ -1,5 +1,7 @@
 import markdown
 from markdown.extensions import Extension
+from markdown.inlinepatterns import InlineProcessor
+import xml.etree.ElementTree as etree
 
 class VideoExtension(Extension):
     def __init__(self, **kwargs):
@@ -53,7 +55,7 @@ class Dailymotion(markdown.inlinepatterns.Pattern):
         return render_iframe(url, width, height)
 
 
-class Metacafe(markdown.inlinepatterns.Pattern):
+class Metacafe(InlineProcessor):
     def handleMatch(self, m):
         url = '//www.metacafe.com/embed/%s/' % m.group('metacafeid')
         width = self.ext.config['metacafe_width'][0]
@@ -94,7 +96,7 @@ class Youtube(markdown.inlinepatterns.Pattern):
 
 
 def render_iframe(url, width, height):
-    iframe = Extension.Element('iframe')
+    iframe = etree.Element('iframe')
     iframe.set('width', width)
     iframe.set('height', height)
     iframe.set('src', url)
@@ -104,21 +106,20 @@ def render_iframe(url, width, height):
 
 
 def flash_object(url, width, height):
-    obj = Extension.Element('object')
+    obj = etree.Element('object')
     obj.set('type', 'application/x-shockwave-flash')
     obj.set('width', width)
     obj.set('height', height)
     obj.set('data', url)
-    param = Extension.Element('param')
+    param = etree.Element('param')
     param.set('name', 'movie')
     param.set('value', url)
     obj.append(param)
-    param = Extension.Element('param')
+    param = etree.Element('param')
     param.set('name', 'allowFullScreen')
     param.set('value', 'true')
     obj.append(param)
     return obj
-
 
 def makeExtension(**kwargs):
     return VideoExtension(**kwargs)
