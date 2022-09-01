@@ -471,7 +471,7 @@ textarea
     border-color: transparent;
 }
 
-.tmc > a, .tmc > a:active, .tmc > a:focus, .tmc > a:link
+.tmc > a .tmc > a:active .tmc > a:focus .tmc > a:link
 {
     color: rgb(33, 139, 84);
 }
