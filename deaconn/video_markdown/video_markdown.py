@@ -1,6 +1,5 @@
 import markdown
 from markdown.extensions import Extension
-from markdown.inlinepatterns import InlineProcessor
 import xml.etree.ElementTree as etree
 
 class VideoExtension(Extension):
