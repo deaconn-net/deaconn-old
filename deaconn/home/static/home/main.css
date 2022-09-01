@@ -2,14 +2,14 @@
 
 .tmc, .tmc:active, .tmc:focus, .tmc:link
 {
-    color: rgb(0, 204, 99) !important;
+    color: rgb(0, 211, 148) !important;
     text-decoration: none !important;
     border-bottom: 2px solid transparent;
 }
 
 .tmc:hover
 {
-    color: rgb(0, 231, 112) !important;
+    color: rgb(0, 255, 179) !important;
     border-color: rgb(0, 219, 154);
 }
 
