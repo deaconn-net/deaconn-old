@@ -5,7 +5,6 @@ from django.utils.safestring import mark_safe
 
 register = template.Library()
 
-import markdown_strikethrough
 from video_markdown import VideoExtension
 
 def do_markdown(contents):
