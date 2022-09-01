@@ -16,7 +16,7 @@ body
     color: rgb(201, 201, 201) !important;
 }
 
-a
+a:not(.tmc)
 {
     color: rgb(40 194 255) !important;
     transition: 200ms;
@@ -36,7 +36,7 @@ img
     max-height: 100%;
 }
 
-a:hover
+a:hover:not(.tmc)
 {
     color: rgb(0, 168, 235) !important;
     border-color: rgb(0, 168, 235);
