@@ -55,7 +55,7 @@ class Dailymotion(markdown.inlinepatterns.Pattern):
         return render_iframe(url, width, height)
 
 
-class Metacafe(InlineProcessor):
+class Metacafe(markdown.inlinepatterns.Pattern):
     def handleMatch(self, m):
         url = '//www.metacafe.com/embed/%s/' % m.group('metacafeid')
         width = self.ext.config['metacafe_width'][0]

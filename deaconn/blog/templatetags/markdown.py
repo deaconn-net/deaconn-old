@@ -9,6 +9,6 @@ from video_markdown import VideoExtension
 
 def do_markdown(contents):
     #return contents
-    return mark_safe(markdown.markdown(contents, extensions=['fenced_code', 'codehilite']))
+    return mark_safe(markdown.markdown(contents, extensions=[VideoExtension(), 'fenced_code', 'codehilite']))
 
 register.filter('do_markdown', do_markdown)
