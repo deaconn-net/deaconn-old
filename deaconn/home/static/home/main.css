@@ -2,12 +2,12 @@
 
 .tmc, .tmc:active, .tmc:focus, .tmc:link
 {
-    color: rgb(33, 139, 84) !important;
+    color: rgb(0, 204, 99) !important;
 }
 
-.tmc > a:hover
+.tmc:hover
 {
-    color: rgb(31, 170, 98) !important;
+    color: rgb(0, 231, 112) !important;
 }
 
 body 
