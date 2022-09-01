@@ -1,5 +1,15 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 
+.tmc > a .tmc > a:active .tmc > a:focus .tmc > a:link
+{
+    color: rgb(33, 139, 84) !important;
+}
+
+.tmc > a:hover
+{
+    color: rgb(31, 170, 98) !important;
+}
+
 body 
 {
     margin: 0px;
@@ -469,14 +479,4 @@ textarea
 #article_add_div a:hover
 {
     border-color: transparent;
-}
-
-.tmc > a .tmc > a:active .tmc > a:focus .tmc > a:link
-{
-    color: rgb(33, 139, 84) !important;
-}
-
-.tmc > a:hover
-{
-    color: rgb(31, 170, 98) !important;
 }
