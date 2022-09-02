@@ -29,4 +29,4 @@ def convert_with_markdown(request):
     if contents is None:
         return HttpResponse("404")
     else:
-        return HttpResponse(markdown.markdown(contents, extensions=['fenced_code', 'codehilite', 'markdown_strikethrough:StrikethroughExtension', VideoExtension()]))
+        return HttpResponse(markdown.markdown(contents, extensions=['fenced_code', 'codehilite']))
