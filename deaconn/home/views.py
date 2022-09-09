@@ -6,7 +6,6 @@ from django.http import HttpResponse
 
 from django.views.decorators.csrf import csrf_exempt
 
-import markdown_strikethrough
 from video_markdown import VideoExtension
 
 def home_view(request):
