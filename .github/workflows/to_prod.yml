@@ -1,4 +1,4 @@
-name: Run
+name: Deploy To Production
 
 on:
   push:
@@ -10,15 +10,15 @@ jobs:
   prod:
     runs-on: ubuntu-latest
     steps:
-      - name: Install SSH Key
+      - name: Install SSH Key.
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.PROD_SSH_KEY }}
           known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
           
-      - name: Adding Known Hosts
-        run: ssh-keyscan -p 1023 -H 51.81.86.146 >> ~/.ssh/known_hosts
+      - name: Adding our IP to known hosts.
+        run: ssh-keyscan -p ${{ secrets.PROD_SSH_PORT }} -H ${{ secrets.PROD_SSH_IP }} >> ~/.ssh/known_hosts
         
-      - name: Rebuild
-        run: ssh prod@51.81.86.146 -p 1023 sudo systemctl restart deaconn
+      - name: Restart service that automatically pulls from Git and deploys application in Docker container via Docker Compose (started with deaconn systemctl service).
+        run: ssh ${{ secrets.PROD_SSH_USER }}@${{ secrets.PROD_SSH_IP }} -p ${{ secrets.PROD_SSH_PORT }} sudo systemctl restart deaconn
     
