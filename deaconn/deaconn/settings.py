@@ -29,6 +29,7 @@ DEBUG = False
 if os.environ.get('DEBUG'):
     DEBUG = True
 
+# I understand the IP of Deaconn is in here, but the server itself is secure and nothing sensitive is hosted on it.
 ALLOWED_HOSTS = ['51.81.86.146', '127.0.0.1', 'localhost', 'deaconn.net', 'pb-dev01.deacon.internal']
 
 # Application definition
