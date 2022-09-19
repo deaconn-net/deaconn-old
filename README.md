@@ -17,7 +17,7 @@ cd deaconn/
 
 # Run Django web application with 'exec_with_envs.sh' that sets a couple needed environmental variables.
 # Note - Web server listens @ 0.0.0.0:8000.
-./exec_with_envs.sh "python3 manage.py runserver 0.0.0.0:8000
+./exec_with_envs.sh "python3 manage.py runserver 0.0.0.0:8000"
 ```
 
 ## Credits
