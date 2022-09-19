@@ -29,7 +29,8 @@ urlpatterns = [
     path('products/', include('products.urls')),
     path('blog/', include('blog.urls')),
     path('lbg/', include('lbg.urls')),
-    path('tmc/', include('tmc.urls'))
+    path('tmc/', include('tmc.urls')),
+    path('speedruntg/', include('speedruntg.urls'))
 ]
 
 if settings.DEBUG:
