@@ -494,7 +494,12 @@ textarea
     height: 360px;
 }
 
-li
+.card-list-spaced li
 {
     margin-bottom: 1em;
+}
+
+.card-list-nodecor li
+{
+    list-style-type: none;
 }
