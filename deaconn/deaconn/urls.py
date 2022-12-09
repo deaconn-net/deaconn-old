@@ -30,7 +30,6 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('lbg/', include('lbg.urls')),
     path('tmc/', include('tmc.urls')),
-    path('speedruntg/', include('speedruntg.urls'))
 ]
 
 if settings.DEBUG:
