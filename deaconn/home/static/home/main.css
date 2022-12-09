@@ -489,6 +489,12 @@ textarea
     border-color: transparent;
 }
 
-.card-img-top {
+.card-img-top 
+{
     height: 360px;
+}
+
+li
+{
+    margin-bottom: 1em;
 }
