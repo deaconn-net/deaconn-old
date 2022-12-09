@@ -488,3 +488,7 @@ textarea
 {
     border-color: transparent;
 }
+
+.card-img-top {
+    height: 360px;
+}
