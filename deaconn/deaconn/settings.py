@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'lbg.apps.LbgConfig',
     'tmc.apps.TmcConfig',
-    'speedruntg.apps.SpeedruntgConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
