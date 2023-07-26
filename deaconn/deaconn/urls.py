@@ -28,7 +28,6 @@ urlpatterns = [
     path('do_markdown/', convert_with_markdown),
     path('products/', include('products.urls')),
     path('blog/', include('blog.urls')),
-    path('lbg/', include('lbg.urls')),
     path('tmc/', include('tmc.urls')),
 ]
 

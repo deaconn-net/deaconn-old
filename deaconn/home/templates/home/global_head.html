@@ -6,7 +6,6 @@
 <meta name="keywords" content="Deaconn, christian, deacon, products, technology, lbg, {% if tags %}{{ tags }}{% endif %}">
 <meta name="author" content="{% if author %}{{ author }}{% else %}Christian Deacon{% endif %}">
 
-
 <meta content="{{ title }}" property="og:title">
 <meta content="Deaconn" property="og:site_name">
 <meta content="{% if article.description %}{{ article.description }}{% else %}Christian Deacon's website and portfolio.{% endif %}" property="og:description">
@@ -33,3 +32,13 @@
 <meta itemprop="image" content="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}">
 <meta itemprop="thumbnailUrl" content="{% if article.image %}{{ article.image.url }}{% else %}{% static 'home/default_banner.jpg' %}{% endif %}">
 <meta itemprop="alternativeHeadline" content="{% if article.description %}{{ article.description }}{% else %}Christian Deacon's website and portfolio.{% endif %}">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B88SXHV10B"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+
+    gtag("config", "G-B88SXHV10B");
+</script>

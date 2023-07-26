@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'products.apps.ProductsConfig',
     'blog.apps.BlogConfig',
-    'lbg.apps.LbgConfig',
     'tmc.apps.TmcConfig',
     'django.contrib.admin',
     'django.contrib.auth',
