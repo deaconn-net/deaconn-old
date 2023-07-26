@@ -503,3 +503,14 @@ textarea
 {
     list-style-type: none;
 }
+
+.page-warning
+{
+    text-align: center;
+    font-size: 1em;
+}
+
+.page-warning > p > strong
+{
+    font-weight: 800;
+}
